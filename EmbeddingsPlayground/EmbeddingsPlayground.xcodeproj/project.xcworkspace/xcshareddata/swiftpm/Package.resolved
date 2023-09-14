@@ -1,0 +1,104 @@
+{
+  "pins" : [
+    {
+      "identity" : "cataphyl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PreternaturalAI/Cataphyl",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7f2db1cc4de59b025550b924281303e6cffa837e"
+      }
+    },
+    {
+      "identity" : "corepersistence",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/CorePersistence.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "47b960b3f12ee6f1e7a831ac386521ad29c9f518"
+      }
+    },
+    {
+      "identity" : "largelanguagemodels",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PreternaturalAI/LargeLanguageModels.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "27101a44ed2365f8f788cf6ca55dff758304461f"
+      }
+    },
+    {
+      "identity" : "merge",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/Merge.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "11b74ba6dcb930862f6dc0fb88ba0c56ed8e1eaf"
+      }
+    },
+    {
+      "identity" : "networkkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/NetworkKit.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4feb7cd8a0fd433dc019d038102b1b746a1e0fba"
+      }
+    },
+    {
+      "identity" : "openai",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/OpenAI",
+      "state" : {
+        "branch" : "main",
+        "revision" : "74dafe826e4f1293230f188b0ab92c4ce8d410d6"
+      }
+    },
+    {
+      "identity" : "swallow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/Swallow.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "3bf0ed18bae485d5a1ab5d0aa5efbe63714ca8ff"
+      }
+    },
+    {
+      "identity" : "swift-async-algorithms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-async-algorithms",
+      "state" : {
+        "branch" : "main",
+        "revision" : "4a1fb99f0089a9d9db07859bcad55b4a77e3c3dd"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections",
+      "state" : {
+        "branch" : "release/1.1",
+        "revision" : "873690c60e35d647e10b0d0d69799abae2001234"
+      }
+    },
+    {
+      "identity" : "swiftapi",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/SwiftAPI.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "4e9981d22375dfbc4c3b711d09aa09a57c74c4e2"
+      }
+    },
+    {
+      "identity" : "swiftuix",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftUIX/SwiftUIX.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "48d3a5c335000623dff7297e6254df632d612f4e"
+      }
+    }
+  ],
+  "version" : 2
+}
