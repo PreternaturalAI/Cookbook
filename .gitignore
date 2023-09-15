@@ -1,1 +1,6 @@
-Journal.xcodeproj/xcuserdata/vmanot.xcuserdatad/xcschemes/xcschememanagement.plist
+.DS_Store
+.swiftpm/
+.swiftpm/*
+/.build
+/Packages
+xcuserdata/

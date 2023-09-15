@@ -2,27 +2,30 @@
 // Copyright (c) Vatsal Manot
 //
 
-import Accelerate
 import Cataphyl
 import Merge
 import LargeLanguageModels
 import OpenAI
-import SwiftUI
-import TabularData
+import SwiftUIX
 
 struct ContentView: View {
-    @StateObject private var session = TextEmbeddingsPlaygroundSession(document: .unsafelyUnwrapping(AppModel.shared, \.data))
+    @StateObject private var session = PlaygroundDocumentSession(document: .unsafelyUnwrapping(AppModel.shared, \.data))
     
     var body: some View {
         Form {
-            Section("OpenAI Key:") {
-                TextField("", text: $session.document.openAIKey.withDefaultValue(""), prompt: Text("Enter your OpenAI key here..."))
-            }
-            .multilineTextAlignment(.leading)
+            authenticationSection
             
             Section {
-                TextField("", text: $session.document.query.withDefaultValue(""), prompt: Text("Enter your query here.."))
-                
+                inputField
+            } header: {
+                Text("Query")
+            } footer: {
+                Text("This is the string that all the data will be compared against.")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
+            
+            Section {
                 dataList
             } header: {
                 HStack {
@@ -36,8 +39,28 @@ struct ContentView: View {
             .multilineTextAlignment(.leading)
             .lineLimit(4)
         }
-        .formStyle(.grouped)
         .padding()
+    }
+    
+    private var authenticationSection: some View {
+        Section("OpenAI Key:") {
+            SecureField(
+                "",
+                text: $session.document.openAIKey.withDefaultValue(""), 
+                prompt: Text("Enter your OpenAI key here...")
+            )
+        }
+        .multilineTextAlignment(.leading)
+    }
+    
+    private var inputField: some View {
+        TextField(
+            "",
+            text: $session.document.query.withDefaultValue(""),
+            prompt: Text("Enter your query here..")
+        )
+        .frame(width: .greedy, alignment: .leading)
+        .multilineTextAlignment(.leading)
     }
     
     @ViewBuilder
@@ -53,27 +76,24 @@ struct ContentView: View {
             
             
             ForEach(data, id: \.0) { (index, text) in
-                HStack {
-                    Text(index.description)
-                        .monospaced()
-                        .bold()
-                        .fixedSize()
-                    
-                    TextEditor(text: text)
-                        .font(.body)
-                        .frame(width: .greedy)
-                    
-                    if let score = session.document.cache.comparison.scoresByIndex[index] {
-                        Text(verbatim: String(format: "%.3f", score))
-                            .monospaced()
-                            .frame(maxWidth: 64)
-                            .fixedSize()
-                            .frame(minWidth: 44)
+                Cell(
+                    index: index,
+                    text: text,
+                    score: session.document.cache.comparison.scoresByIndex[index]
+                )
+                .padding(.vertical, .extraSmall)
+                .contextMenu {
+                    Button("Delete") {
+                        session.document.data.remove(at: index)
                     }
                 }
-                .padding(.small)
+            }
+            .onDelete {
+                session.document.data.remove(at: $0)
             }
         }
+        .listStyle(.inset(alternatesRowBackgrounds: true))
+        .cornerRadius(4)
     }
     
     private var insertRowButton: some View {
@@ -87,94 +107,60 @@ struct ContentView: View {
     }
 }
 
-public struct TextEmbeddingsPlaygroundDocument: Codable, Hashable, Sendable {
-    var openAIKey: String?
-    
-    var query: String? {
-        didSet {
-            cache = .init()
-        }
-    }
-    var data: [String] = [] {
-        didSet {
-            cache = .init()
-        }
-    }
-    
-    struct Cache: Codable, Hashable, Sendable {
-        struct Embeddings: Codable, Hashable, Sendable {
-            var query: _RawTextEmbedding?
-            var data: [_RawTextEmbedding]?
-        }
+extension ContentView {
+    fileprivate struct Cell: View {
+        let index: Int
         
-        struct Comparison: Codable, Hashable, Sendable {
-            var scoresByIndex: [Int: Double] = [:]
-        }
+        @Binding var text: String
         
-        var embeddings = Embeddings()
-        var comparison = Comparison()
+        let score: Double?
         
-        init(embeddings: Embeddings, query: String, data: [String]) throws {
-            self.embeddings = embeddings
-            self.comparison = .init(scoresByIndex: try Dictionary(uniqueKeysWithValues: data.indices.map { index in
-                let queryEmbedding = try embeddings.query.unwrap().rawValue
-                let dataEmbedding = try embeddings.data.unwrap()[index].rawValue
+        var body: some View {
+            HStack(alignment: .top) {
+                HStack(alignment: .top, spacing: 2) {
+                    indexView
+                        .padding(.top, 1)
+                    
+                    TextEditor(text: $text)
+                        .font(.body)
+                        .frame(width: .greedy)
+                        .multilineTextAlignment(.leading)
+                        .padding(.top, .extraSmall)
+                }
+                .padding(.trailing)
                 
-                let similarity = (vDSP.cosineSimilarity(lhs: queryEmbedding, rhs: dataEmbedding))
-                
-                return (index, similarity)
-            }))
+                scoreView
+                    .help("Similarity Score")
+                    .padding(.top, .extraSmall)
+            }
+            .scrollContentBackground(.hidden)
         }
         
-        init() {
-            
+        private var indexView: some View {
+            Text(index.description)
+                .font(.subheadline.monospaced())
+                .foregroundStyle(.primary)
+                .fixedSize()
+                .padding(.extraSmall)
+                .background {
+                    Circle()
+                        .fill(.tertiary)
+                }
         }
-    }
-    
-    var cache = Cache()
-    
-    public init() {
         
-    }
-}
-
-public final class TextEmbeddingsPlaygroundSession: _CancellablesProviding, ObservableObject {
-    @Dependency(\.textEmbeddingsProvider) var textEmbeddingsProvider
-    
-    @PublishedAsyncBinding var document: TextEmbeddingsPlaygroundDocument
-    
-    init(document: PublishedAsyncBinding<TextEmbeddingsPlaygroundDocument>) {
-        self._document = document
-        
-        $document
-            .debounce(for: .milliseconds(200), scheduler: DispatchQueue.main)
-            .sink { _ in
-                Task { @MainActor in
-                    try await self.embed()
+        private var scoreView: some View {
+            Group {
+                if let score {
+                    Text(verbatim: String(format: "%.4f", score))
+                        .monospaced()
+                        .frame(minWidth: 44, maxWidth: 64)
+                        .fixedSize()
+                } else {
+                    ProgressView()
+                        .controlSize(.mini)
+                        .padding(.top, .extraSmall)
                 }
             }
-            .store(in: cancellables)
-    }
-    
-    @MainActor
-    func embed() async throws {
-        guard document.cache.embeddings.query == nil || document.cache.embeddings.data == nil || document.cache.comparison == .init() else {
-            return
         }
-        
-        let apiKey = try document.openAIKey.unwrap()
-        let textEmbeddingsProvider = OpenAI.APIClient(apiKey: apiKey)
-        
-        let query = try document.query.unwrap()
-        let data = document.data
-        
-        self.document.cache = try .init(
-            embeddings: .init(
-                query: try await textEmbeddingsProvider.textEmbedding(for: query),
-                data: try await textEmbeddingsProvider.textEmbeddings(for: data).data.map({ $0.embedding })
-            ),
-            query: query,
-            data: data
-        )
     }
 }

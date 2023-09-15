@@ -24,5 +24,5 @@ public class AppModel: Logging, ObservableObject {
         coder: JSONCoder(),
         options: .init(readErrorRecoveryStrategy: .discardAndReset)
     )
-    var data = TextEmbeddingsPlaygroundDocument()
+    var data = PlaygroundDocument()
 }
