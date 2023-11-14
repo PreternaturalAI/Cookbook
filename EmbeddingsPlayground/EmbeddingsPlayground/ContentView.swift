@@ -9,7 +9,9 @@ import OpenAI
 import SwiftUIX
 
 struct ContentView: View {
-    @StateObject private var session = PlaygroundDocumentSession(document: .unsafelyUnwrapping(AppModel.shared, \.data))
+    @StateObject private var session = PlaygroundDocumentSession(
+        document: PublishedAsyncBinding.unsafelyUnwrapping(AppModel.shared, \.data, as: PlaygroundDocument.self)!
+    )
     
     var body: some View {
         Form {
@@ -123,8 +125,9 @@ extension ContentView {
                     
                     TextEditor(text: $text)
                         .font(.body)
-                        .frame(width: .greedy)
                         .multilineTextAlignment(.leading)
+                        .scrollDisabled(true)
+                        .frame(width: .greedy)
                         .padding(.top, .extraSmall)
                 }
                 .padding(.trailing)

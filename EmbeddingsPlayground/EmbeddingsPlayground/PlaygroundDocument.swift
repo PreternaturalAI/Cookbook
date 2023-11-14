@@ -63,7 +63,9 @@ public final class PlaygroundDocumentSession: _CancellablesProviding, Observable
         self.document.cache = try .init(
             embeddings: .init(
                 query: try await textEmbeddingsProvider.textEmbedding(for: query),
-                data: try await textEmbeddingsProvider.textEmbeddings(for: data).data.map({ $0.embedding })
+                data: try await textEmbeddingsProvider.textEmbeddings(for: data).data.map {
+                    $0.embedding
+                }
             ),
             query: query,
             data: data

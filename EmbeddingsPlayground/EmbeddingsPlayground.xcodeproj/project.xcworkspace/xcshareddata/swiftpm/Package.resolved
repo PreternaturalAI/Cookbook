@@ -6,7 +6,7 @@
       "location" : "https://github.com/PreternaturalAI/Cataphyl",
       "state" : {
         "branch" : "main",
-        "revision" : "7f2db1cc4de59b025550b924281303e6cffa837e"
+        "revision" : "805ae222d4f2b3f96ddbdc9cb03fbcf71af3745b"
       }
     },
     {
@@ -15,7 +15,16 @@
       "location" : "https://github.com/vmanot/CorePersistence.git",
       "state" : {
         "branch" : "main",
-        "revision" : "47b960b3f12ee6f1e7a831ac386521ad29c9f518"
+        "revision" : "f6efaa000f624bf1ae5d8481e7936fe01bac6035"
+      }
+    },
+    {
+      "identity" : "expansions",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/Expansions.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "557874f0163f271e50865532dc8c3f0ac43ce023"
       }
     },
     {
@@ -24,7 +33,7 @@
       "location" : "https://github.com/PreternaturalAI/LargeLanguageModels.git",
       "state" : {
         "branch" : "main",
-        "revision" : "27101a44ed2365f8f788cf6ca55dff758304461f"
+        "revision" : "bbcc540d7cfbb16c62b77a1bf458531f046d3955"
       }
     },
     {
@@ -33,7 +42,7 @@
       "location" : "https://github.com/vmanot/Merge.git",
       "state" : {
         "branch" : "master",
-        "revision" : "11b74ba6dcb930862f6dc0fb88ba0c56ed8e1eaf"
+        "revision" : "dafac342041828e05dcf9b29adebf3e40698adf9"
       }
     },
     {
@@ -42,7 +51,7 @@
       "location" : "https://github.com/vmanot/NetworkKit.git",
       "state" : {
         "branch" : "master",
-        "revision" : "4feb7cd8a0fd433dc019d038102b1b746a1e0fba"
+        "revision" : "56de612e6623ae5674cb8adb13db0d1b4117bdd8"
       }
     },
     {
@@ -51,7 +60,7 @@
       "location" : "https://github.com/vmanot/OpenAI",
       "state" : {
         "branch" : "main",
-        "revision" : "74dafe826e4f1293230f188b0ab92c4ce8d410d6"
+        "revision" : "50897b920305c5e1b1b99614bd4b1dd1468e7212"
       }
     },
     {
@@ -60,7 +69,7 @@
       "location" : "https://github.com/vmanot/Swallow.git",
       "state" : {
         "branch" : "master",
-        "revision" : "3bf0ed18bae485d5a1ab5d0aa5efbe63714ca8ff"
+        "revision" : "0eb77f9126c6f52ca4a25459e8c16aefe04e5360"
       }
     },
     {
@@ -68,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-async-algorithms",
       "state" : {
-        "branch" : "main",
-        "revision" : "4a1fb99f0089a9d9db07859bcad55b4a77e3c3dd"
+        "revision" : "cb417003f962f9de3fc7852c1b735a1f1152a89a",
+        "version" : "1.0.0-beta.1"
       }
     },
     {
@@ -78,7 +87,16 @@
       "location" : "https://github.com/apple/swift-collections",
       "state" : {
         "branch" : "release/1.1",
-        "revision" : "873690c60e35d647e10b0d0d69799abae2001234"
+        "revision" : "4a1d92ba85027010d2c528c05576cde9a362254b"
+      }
+    },
+    {
+      "identity" : "swift-syntax",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-syntax",
+      "state" : {
+        "revision" : "6ad4ea24b01559dde0773e3d091f1b9e36175036",
+        "version" : "509.0.2"
       }
     },
     {
@@ -87,7 +105,7 @@
       "location" : "https://github.com/vmanot/SwiftAPI.git",
       "state" : {
         "branch" : "master",
-        "revision" : "4e9981d22375dfbc4c3b711d09aa09a57c74c4e2"
+        "revision" : "c33533a00102a1351b0d2a7da0ecf1db98775760"
       }
     },
     {
@@ -96,7 +114,16 @@
       "location" : "https://github.com/SwiftUIX/SwiftUIX.git",
       "state" : {
         "branch" : "master",
-        "revision" : "48d3a5c335000623dff7297e6254df632d612f4e"
+        "revision" : "35c21709eb6c01b12a2ae75a949e7860263d4db4"
+      }
+    },
+    {
+      "identity" : "usearch",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/unum-cloud/usearch",
+      "state" : {
+        "branch" : "main",
+        "revision" : "c7e2391cb8939c2406d2d92e2fa03bb400fb525a"
       }
     }
   ],
