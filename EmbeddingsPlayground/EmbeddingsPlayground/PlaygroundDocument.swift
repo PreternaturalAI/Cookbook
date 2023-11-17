@@ -30,7 +30,7 @@ public struct PlaygroundDocument: Codable, Hashable, Sendable {
     }
 }
 
-public final class PlaygroundDocumentSession: _CancellablesProviding, ObservableObject {
+public final class EmbeddingComparisonSession: _CancellablesProviding, ObservableObject {
     @Dependency(\.textEmbeddingsProvider) var textEmbeddingsProvider
     
     @PublishedAsyncBinding var document: PlaygroundDocument
