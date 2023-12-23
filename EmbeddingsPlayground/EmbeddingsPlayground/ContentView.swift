@@ -2,15 +2,16 @@
 // Copyright (c) Vatsal Manot
 //
 
-import Cataphyl
-import Merge
-import LargeLanguageModels
-import OpenAI
-import SwiftUIX
+import Lite
+import SwallowUI
 
 struct ContentView: View {
-    @StateObject private var session = EmbeddingComparisonSession(
-        document: PublishedAsyncBinding.unsafelyUnwrapping(AppModel.shared, \.data, as: PlaygroundDocument.self)!
+    @StateObject private var session = EmbeddingsPlaygroundSession(
+        document: PublishedAsyncBinding.unsafelyUnwrapping(
+            AppModel.shared,
+            \.data,
+            as: EmbeddingsPlayground.self
+        )!
     )
     
     var body: some View {
@@ -28,14 +29,19 @@ struct ContentView: View {
             }
             
             Section {
-                dataList
+                Focusable { proxy in
+                    dataList
+                }
+                .fixedSize(horizontal: false, vertical: false)
             } header: {
                 HStack {
                     Text("Data")
                     
                     Spacer()
                     
-                    insertRowButton
+                    Focusable { _ in
+                        insertRowButton
+                    }
                 }
             }
             .multilineTextAlignment(.leading)
@@ -49,11 +55,11 @@ struct ContentView: View {
         Section {
             SecureField(
                 "",
-                text: $session.document.openAIKey.withDefaultValue(""), 
+                text: $session.document.openAIKey.withDefaultValue(""),
                 prompt: Text("Enter your OpenAI key here...")
             )
         } header: {
-          Text("OpenAI Key:")
+            Text("OpenAI Key:")
         } footer: {
             PresentationLink {
                 WebView(url: URL(string: "https://platform.openai.com/api-keys")!) {

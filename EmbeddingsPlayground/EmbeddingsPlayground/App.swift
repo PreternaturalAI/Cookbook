@@ -2,8 +2,7 @@
 // Copyright (c) Vatsal Manot
 //
 
-import CorePersistence
-import SwiftUI
+import Lite
 
 @main
 struct App: SwiftUI.App {
@@ -24,5 +23,5 @@ public class AppModel: Logging, ObservableObject {
         coder: JSONCoder(),
         options: .init(readErrorRecoveryStrategy: .discardAndReset)
     )
-    var data = PlaygroundDocument()
+    var data = EmbeddingsPlayground()
 }
