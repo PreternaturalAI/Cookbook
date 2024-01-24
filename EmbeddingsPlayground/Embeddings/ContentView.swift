@@ -6,15 +6,45 @@ import Lite
 import SwallowUI
 
 struct ContentView: View {
-    @StateObject private var session = EmbeddingsPlaygroundSession(
+    var body: some View {
+        _NavigationView {
+            List {
+                NavigationLink("Accounts") {
+                    LTAccountsScene()
+                }
+                
+                NavigationLink("Embeddings") {
+                    EmbeddingsView()
+                }
+            }
+        }
+    }
+}
+
+struct EmbeddingsView: View {
+    @StateObject private var session = LTEmbeddingsPlaygroundSession(
         document: PublishedAsyncBinding.unsafelyUnwrapping(
             AppModel.shared,
             \.data,
-            as: EmbeddingsPlayground.self
+            as: LTEmbeddingsPlayground.self
         )!
     )
     
     var body: some View {
+        contentView
+            .inspector(isPresented: .constant(true)) {
+                inspectorView
+            }
+    }
+    
+    var inspectorView: some View {
+        List {
+            
+        }
+        .frame(minWidth: 256)
+    }
+    
+    var contentView: some View {
         Form {
             authenticationSection
             
@@ -34,14 +64,16 @@ struct ContentView: View {
                 }
                 .fixedSize(horizontal: false, vertical: false)
             } header: {
-                HStack {
-                    Text("Data")
-                    
-                    Spacer()
-                    
-                    Focusable { _ in
+                VStack(spacing: 0) {
+                    HStack {
+                        Text("Data")
+                        
+                        Spacer()
+                        
                         insertRowButton
                     }
+                    
+                    Divider()
                 }
             }
             .multilineTextAlignment(.leading)
@@ -125,17 +157,18 @@ struct ContentView: View {
             Label("New", systemImage: .plus)
                 .imageScale(.medium)
         }
-        .buttonStyle(.borderless)
     }
 }
 
-extension ContentView {
+extension EmbeddingsView {
     fileprivate struct Cell: View {
         let index: Int
         
         @Binding var text: String
         
         let score: Double?
+        
+        @FocusState var isFocused: Bool
         
         var body: some View {
             HStack(alignment: .top) {
@@ -149,6 +182,7 @@ extension ContentView {
                         .scrollDisabled(true)
                         .frame(width: .greedy)
                         .padding(.top, .extraSmall)
+                        .focused($isFocused)
                 }
                 .padding(.trailing)
                 

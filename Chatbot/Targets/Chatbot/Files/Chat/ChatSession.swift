@@ -60,7 +60,7 @@ class ChatSession: Logging, ObservableObject {
     
     @MainActor
     private func _send() async throws {
-        let systemMessage = ChatDocument.Message(AbstractLLM.ChatMessage.system("You are a friendly assistant"))
+        let systemMessage = ChatDocument.Message(from: AbstractLLM.ChatMessage.system("You are a friendly assistant"))
         let messages = [systemMessage] + self.document.messages
         
         self.activityPhaseOfLastItem = .sending

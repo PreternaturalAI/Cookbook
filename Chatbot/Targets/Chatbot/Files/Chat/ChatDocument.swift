@@ -59,12 +59,16 @@ extension ChatDocument {
 }
 
 extension ChatDocument.Message {
-    public init(_ message: AbstractLLM.ChatMessage) {
-        self.init(id: .random(), base: message)
-    }
-    
     public init(id: ID = .random(), role: AbstractLLM.ChatRole, content: String) {
         self.init(id: id, base: .init(id: nil, role: role, content: content))
+    }
+}
+
+// MARK: - Conformances
+
+extension ChatDocument.Message: __AbstractLLM_ChatMessageInitiable {
+    public init(from message: AbstractLLM.ChatMessage) {
+        self.init(id: .random(), base: message)
     }
 }
 

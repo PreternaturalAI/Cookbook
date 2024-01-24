@@ -11,6 +11,7 @@
 		466C18452B368151000ADD45 /* ChatSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C18422B368151000ADD45 /* ChatSession.swift */; };
 		466C18462B368151000ADD45 /* ChatSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466C18432B368151000ADD45 /* ChatSessionView.swift */; };
 		46978A872B0D27C300DF0752 /* MainScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46978A592B0D27C200DF0752 /* MainScene.swift */; };
+		46AC42682B5B4024006E7FFD /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 46AC42672B5B4024006E7FFD /* Lite */; };
 		46FD0FA72B281671008A536C /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 46FD0FA62B281671008A536C /* Lite */; };
 		D47A38AB294E861E002C06CA /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47A38AA294E861E002C06CA /* App.swift */; };
 		D47A38AF294E861F002C06CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D47A38AE294E861F002C06CA /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46AC42682B5B4024006E7FFD /* Lite in Frameworks */,
 				46FD0FA72B281671008A536C /* Lite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -129,6 +131,7 @@
 			name = Chatbot;
 			packageProductDependencies = (
 				46FD0FA62B281671008A536C /* Lite */,
+				46AC42672B5B4024006E7FFD /* Lite */,
 			);
 			productName = ExampleApp;
 			productReference = D47A38A7294E861E002C06CA /* Chatbot.app */;
@@ -142,7 +145,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					D47A38A6294E861E002C06CA = {
 						CreatedOnToolsVersion = 14.2;
@@ -159,7 +162,7 @@
 			);
 			mainGroup = D47A389E294E861E002C06CA;
 			packageReferences = (
-				466C18482B3681FE000ADD45 /* XCRemoteSwiftPackageReference "Lite" */,
+				46AC42662B5B4024006E7FFD /* XCRemoteSwiftPackageReference "Lite" */,
 			);
 			productRefGroup = D47A38A8294E861E002C06CA /* Products */;
 			projectDirPath = "";
@@ -231,9 +234,9 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEAD_CODE_STRIPPING = YES;
-				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = NO;
+				ENABLE_TESTABILITY = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -431,9 +434,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		466C18482B3681FE000ADD45 /* XCRemoteSwiftPackageReference "Lite" */ = {
+		46AC42662B5B4024006E7FFD /* XCRemoteSwiftPackageReference "Lite" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "http://github.com/PreternaturalAI/Lite";
+			repositoryURL = "https://github.com/PreternaturalAI/Lite.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -442,6 +445,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		46AC42672B5B4024006E7FFD /* Lite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 46AC42662B5B4024006E7FFD /* XCRemoteSwiftPackageReference "Lite" */;
+			productName = Lite;
+		};
 		46FD0FA62B281671008A536C /* Lite */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Lite;

@@ -7,21 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		468265852B0B142F0011FB0E /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 468265842B0B142F0011FB0E /* Lite */; };
+		4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 4697E9132B59F51E00A1A3D3 /* Lite */; };
 		46A9ADAA2B0B1BC000A6CC3A /* SwallowUI in Frameworks */ = {isa = PBXBuildFile; productRef = 46A9ADA92B0B1BC000A6CC3A /* SwallowUI */; };
 		D495956A2AB2D0DE00FF8274 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49595692AB2D0DE00FF8274 /* App.swift */; };
 		D495956C2AB2D0DE00FF8274 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495956B2AB2D0DE00FF8274 /* ContentView.swift */; };
 		D495956E2AB2D0DF00FF8274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D495956D2AB2D0DF00FF8274 /* Assets.xcassets */; };
-		D495957B2AB2D32300FF8274 /* Cataphyl in Frameworks */ = {isa = PBXBuildFile; productRef = D495957A2AB2D32300FF8274 /* Cataphyl */; };
-		D495957E2AB2D35B00FF8274 /* OpenAI in Frameworks */ = {isa = PBXBuildFile; productRef = D495957D2AB2D35B00FF8274 /* OpenAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D49595662AB2D0DE00FF8274 /* EmbeddingsPlayground.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EmbeddingsPlayground.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D49595662AB2D0DE00FF8274 /* Embeddings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embeddings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49595692AB2D0DE00FF8274 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D495956B2AB2D0DE00FF8274 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D495956D2AB2D0DF00FF8274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D495956F2AB2D0DF00FF8274 /* EmbeddingsPlayground.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EmbeddingsPlayground.entitlements; sourceTree = "<group>"; };
+		D495956F2AB2D0DF00FF8274 /* Embeddings.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Embeddings.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,10 +27,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */,
 				46A9ADAA2B0B1BC000A6CC3A /* SwallowUI in Frameworks */,
-				D495957E2AB2D35B00FF8274 /* OpenAI in Frameworks */,
-				468265852B0B142F0011FB0E /* Lite in Frameworks */,
-				D495957B2AB2D32300FF8274 /* Cataphyl in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,7 +38,7 @@
 		D495955D2AB2D0DE00FF8274 = {
 			isa = PBXGroup;
 			children = (
-				D49595682AB2D0DE00FF8274 /* EmbeddingsPlayground */,
+				D49595682AB2D0DE00FF8274 /* Embeddings */,
 				D49595672AB2D0DE00FF8274 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,28 +46,28 @@
 		D49595672AB2D0DE00FF8274 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D49595662AB2D0DE00FF8274 /* EmbeddingsPlayground.app */,
+				D49595662AB2D0DE00FF8274 /* Embeddings.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		D49595682AB2D0DE00FF8274 /* EmbeddingsPlayground */ = {
+		D49595682AB2D0DE00FF8274 /* Embeddings */ = {
 			isa = PBXGroup;
 			children = (
 				D49595692AB2D0DE00FF8274 /* App.swift */,
 				D495956B2AB2D0DE00FF8274 /* ContentView.swift */,
 				D495956D2AB2D0DF00FF8274 /* Assets.xcassets */,
-				D495956F2AB2D0DF00FF8274 /* EmbeddingsPlayground.entitlements */,
+				D495956F2AB2D0DF00FF8274 /* Embeddings.entitlements */,
 			);
-			path = EmbeddingsPlayground;
+			path = Embeddings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D49595652AB2D0DE00FF8274 /* EmbeddingsPlayground */ = {
+		D49595652AB2D0DE00FF8274 /* Embeddings */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D49595752AB2D0DF00FF8274 /* Build configuration list for PBXNativeTarget "EmbeddingsPlayground" */;
+			buildConfigurationList = D49595752AB2D0DF00FF8274 /* Build configuration list for PBXNativeTarget "Embeddings" */;
 			buildPhases = (
 				D49595622AB2D0DE00FF8274 /* Sources */,
 				D49595632AB2D0DE00FF8274 /* Frameworks */,
@@ -81,15 +77,13 @@
 			);
 			dependencies = (
 			);
-			name = EmbeddingsPlayground;
+			name = Embeddings;
 			packageProductDependencies = (
-				D495957A2AB2D32300FF8274 /* Cataphyl */,
-				D495957D2AB2D35B00FF8274 /* OpenAI */,
-				468265842B0B142F0011FB0E /* Lite */,
 				46A9ADA92B0B1BC000A6CC3A /* SwallowUI */,
+				4697E9132B59F51E00A1A3D3 /* Lite */,
 			);
 			productName = EmbeddingsPlayground;
-			productReference = D49595662AB2D0DE00FF8274 /* EmbeddingsPlayground.app */;
+			productReference = D49595662AB2D0DE00FF8274 /* Embeddings.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -107,7 +101,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D49595612AB2D0DE00FF8274 /* Build configuration list for PBXProject "EmbeddingsPlayground" */;
+			buildConfigurationList = D49595612AB2D0DE00FF8274 /* Build configuration list for PBXProject "Embeddings" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,15 +111,13 @@
 			);
 			mainGroup = D495955D2AB2D0DE00FF8274;
 			packageReferences = (
-				D49595792AB2D32300FF8274 /* XCRemoteSwiftPackageReference "Cataphyl" */,
-				D495957C2AB2D35B00FF8274 /* XCRemoteSwiftPackageReference "OpenAI" */,
-				468265832B0B142F0011FB0E /* XCRemoteSwiftPackageReference "Lite" */,
+				4697E9122B59F51E00A1A3D3 /* XCRemoteSwiftPackageReference "Lite" */,
 			);
 			productRefGroup = D49595672AB2D0DE00FF8274 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D49595652AB2D0DE00FF8274 /* EmbeddingsPlayground */,
+				D49595652AB2D0DE00FF8274 /* Embeddings */,
 			);
 		};
 /* End PBXProject section */
@@ -275,10 +267,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = EmbeddingsPlayground/EmbeddingsPlayground.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Embeddings/Embeddings.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4PWQ7VFGWM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -294,9 +288,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vmanot.EmbeddingsPlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmanot.Embeddings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -311,10 +305,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = EmbeddingsPlayground/EmbeddingsPlayground.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Embeddings/Embeddings.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 4PWQ7VFGWM;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -330,9 +326,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.vmanot.EmbeddingsPlayground;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vmanot.Embeddings;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
@@ -345,7 +341,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D49595612AB2D0DE00FF8274 /* Build configuration list for PBXProject "EmbeddingsPlayground" */ = {
+		D49595612AB2D0DE00FF8274 /* Build configuration list for PBXProject "Embeddings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D49595732AB2D0DF00FF8274 /* Debug */,
@@ -354,7 +350,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D49595752AB2D0DF00FF8274 /* Build configuration list for PBXNativeTarget "EmbeddingsPlayground" */ = {
+		D49595752AB2D0DF00FF8274 /* Build configuration list for PBXNativeTarget "Embeddings" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D49595762AB2D0DF00FF8274 /* Debug */,
@@ -366,25 +362,9 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		468265832B0B142F0011FB0E /* XCRemoteSwiftPackageReference "Lite" */ = {
+		4697E9122B59F51E00A1A3D3 /* XCRemoteSwiftPackageReference "Lite" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "http://github.com/PreternaturalAI/Lite";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		D49595792AB2D32300FF8274 /* XCRemoteSwiftPackageReference "Cataphyl" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/PreternaturalAI/Cataphyl";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
-		};
-		D495957C2AB2D35B00FF8274 /* XCRemoteSwiftPackageReference "OpenAI" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/vmanot/OpenAI";
+			repositoryURL = "https://github.com/PreternaturalAI/Lite.git";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -393,24 +373,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		468265842B0B142F0011FB0E /* Lite */ = {
+		4697E9132B59F51E00A1A3D3 /* Lite */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 468265832B0B142F0011FB0E /* XCRemoteSwiftPackageReference "Lite" */;
+			package = 4697E9122B59F51E00A1A3D3 /* XCRemoteSwiftPackageReference "Lite" */;
 			productName = Lite;
 		};
 		46A9ADA92B0B1BC000A6CC3A /* SwallowUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwallowUI;
-		};
-		D495957A2AB2D32300FF8274 /* Cataphyl */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D49595792AB2D32300FF8274 /* XCRemoteSwiftPackageReference "Cataphyl" */;
-			productName = Cataphyl;
-		};
-		D495957D2AB2D35B00FF8274 /* OpenAI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D495957C2AB2D35B00FF8274 /* XCRemoteSwiftPackageReference "OpenAI" */;
-			productName = OpenAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
