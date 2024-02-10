@@ -46,8 +46,6 @@ struct EmbeddingsView: View {
     
     var contentView: some View {
         Form {
-            authenticationSection
-            
             Section {
                 inputField
             } header: {
@@ -81,32 +79,7 @@ struct EmbeddingsView: View {
         }
         .padding()
     }
-    
-    @ViewBuilder
-    private var authenticationSection: some View {
-        Section {
-            SecureField(
-                "",
-                text: $session.document.openAIKey.withDefaultValue(""),
-                prompt: Text("Enter your OpenAI key here...")
-            )
-        } header: {
-            Text("OpenAI Key:")
-        } footer: {
-            PresentationLink {
-                WebView(url: URL(string: "https://platform.openai.com/api-keys")!) {
-                    ActivityIndicator()
-                }
-                .frame(minWidth: 512 * 1.5, minHeight: 512 * 1.25)
-            } label: {
-                Text("If you don't have an OpenAI key, you can obtain one here.")
-                    .foregroundStyle(Color.accentColor)
-            }
-            .buttonStyle(.plain)
-        }
-        .multilineTextAlignment(.leading)
-    }
-    
+        
     private var inputField: some View {
         TextField(
             "",

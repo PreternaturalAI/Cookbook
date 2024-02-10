@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 4697E9132B59F51E00A1A3D3 /* Lite */; };
-		46A9ADAA2B0B1BC000A6CC3A /* SwallowUI in Frameworks */ = {isa = PBXBuildFile; productRef = 46A9ADA92B0B1BC000A6CC3A /* SwallowUI */; };
 		D495956A2AB2D0DE00FF8274 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49595692AB2D0DE00FF8274 /* App.swift */; };
 		D495956C2AB2D0DE00FF8274 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495956B2AB2D0DE00FF8274 /* ContentView.swift */; };
 		D495956E2AB2D0DF00FF8274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D495956D2AB2D0DF00FF8274 /* Assets.xcassets */; };
@@ -28,7 +27,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */,
-				46A9ADAA2B0B1BC000A6CC3A /* SwallowUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,7 +77,6 @@
 			);
 			name = Embeddings;
 			packageProductDependencies = (
-				46A9ADA92B0B1BC000A6CC3A /* SwallowUI */,
 				4697E9132B59F51E00A1A3D3 /* Lite */,
 			);
 			productName = EmbeddingsPlayground;
@@ -377,10 +374,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4697E9122B59F51E00A1A3D3 /* XCRemoteSwiftPackageReference "Lite" */;
 			productName = Lite;
-		};
-		46A9ADA92B0B1BC000A6CC3A /* SwallowUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwallowUI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
