@@ -148,11 +148,12 @@ struct EmbeddingsView: View {
         }
         .listStyle(.inset(alternatesRowBackgrounds: true))
         .cornerRadius(4)
+        .animation(.default, value: session.document.data)
     }
     
     private var insertRowButton: some View {
         Button {
-            session.document.data.append("This is a string.")
+            session.document.data.append("Enter your text here!")
         } label: {
             Label("New", systemImage: .plus)
                 .imageScale(.medium)
@@ -183,6 +184,7 @@ extension EmbeddingsView {
                         .frame(width: .greedy)
                         .padding(.top, .extraSmall)
                         .focused($isFocused)
+                        .opacity(text == "Enter your text here!" ? 0.75 : 1.0)
                 }
                 .padding(.trailing)
                 

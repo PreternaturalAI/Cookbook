@@ -1,7 +1,11 @@
 > [!IMPORTANT]
-> This cookbook may be out-of-sync with some packages, please contact @vmanot if examples break.
+> This cookbook may occassionally, please notify @vmanot regarding any broken projects.
 
-## Embeddings Playground
+# Cookbook
+
+Sample projects built with Preternatural.
+
+### Embeddings 
 
 This embeddings playground lets you visualize the similarity of a table of texts easily.
 
