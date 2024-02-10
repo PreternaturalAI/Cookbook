@@ -9,7 +9,7 @@ import SwiftUIZ
 
 @MainActor
 final class SearchViewModel: ObservableObject {
-    let safariHistoryManager = SafariHistoryManager()
+    let safariHistoryManager = SafariHistoryManager(historyURL: URL.downloadsDirectory.appending("Safari-History/History.db"))
     
     @Published var searchHistory: [SafariHistoryRecord] = []
     

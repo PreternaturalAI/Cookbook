@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "cataphyl",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PreternaturalAI/Cataphyl.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "a023f4895a6a029b3ee9b803ad4a35ea24fd9b1b"
+      }
+    },
+    {
       "identity" : "chatkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PreternaturalAI/ChatKit.git",
@@ -88,6 +97,15 @@
       "state" : {
         "revision" : "15fde63470d782c897816a74bdd516a907e33147",
         "version" : "12.3.0"
+      }
+    },
+    {
+      "identity" : "swallow",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/vmanot/Swallow.git",
+      "state" : {
+        "branch" : "master",
+        "revision" : "28bbb212189620db072ef052002487923b839b5c"
       }
     },
     {
