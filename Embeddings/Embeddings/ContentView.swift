@@ -3,7 +3,7 @@
 //
 
 import Lite
-import SwallowUI
+import SwiftUIZ
 
 struct ContentView: View {
     var body: some View {
@@ -57,10 +57,8 @@ struct EmbeddingsView: View {
             }
             
             Section {
-                Focusable { proxy in
-                    dataList
-                }
-                .fixedSize(horizontal: false, vertical: false)
+                dataList
+                    .fixedSize(horizontal: false, vertical: false)
             } header: {
                 VStack(spacing: 0) {
                     HStack {
@@ -79,7 +77,7 @@ struct EmbeddingsView: View {
         }
         .padding()
     }
-        
+    
     private var inputField: some View {
         TextField(
             "",
