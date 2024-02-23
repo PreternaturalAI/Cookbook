@@ -10,5 +10,6 @@ struct App: SwiftUI.App {
         WindowGroup {
             ContentView()
         }
+        .commandsRemoved()
     }
 }
