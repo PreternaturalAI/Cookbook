@@ -6,7 +6,7 @@
       "location" : "https://github.com/PreternaturalAI/AI.git",
       "state" : {
         "branch" : "main",
-        "revision" : "23757240196dd2d3fb69f7635e78e904b623d68f"
+        "revision" : "cc3c542ea0297977a422366f550f4a43f6aac655"
       }
     },
     {
@@ -15,7 +15,7 @@
       "location" : "https://github.com/PreternaturalAI/Cataphyl.git",
       "state" : {
         "branch" : "main",
-        "revision" : "8d5ee892f858091bc65bb4416e0b53295d46ee2e"
+        "revision" : "a023f4895a6a029b3ee9b803ad4a35ea24fd9b1b"
       }
     },
     {
@@ -33,7 +33,7 @@
       "location" : "https://github.com/vmanot/CorePersistence.git",
       "state" : {
         "branch" : "main",
-        "revision" : "f9ec6d3b7cfabcc52098751dc2eef3a7b4fdaf2c"
+        "revision" : "76767999c4f649ac2e0d9c632509164291c9747a"
       }
     },
     {
@@ -46,21 +46,12 @@
       }
     },
     {
-      "identity" : "expansions",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/vmanot/Expansions.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "e1ca541bbd3b5c327248a495905ebb168200cc83"
-      }
-    },
-    {
       "identity" : "lite",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/PreternaturalAI/Lite.git",
       "state" : {
         "branch" : "main",
-        "revision" : "a4589981d0cbd26aa027b2ae5b8fbfc80d53fca2"
+        "revision" : "2a116f16b03fd3de336177eaf49b7fb207f5e7a5"
       }
     },
     {
@@ -95,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kean/Nuke.git",
       "state" : {
-        "revision" : "15fde63470d782c897816a74bdd516a907e33147",
-        "version" : "12.3.0"
+        "revision" : "8ecbfc886da39bccb01c34abef5f2ff4073ad633",
+        "version" : "12.4.0"
       }
     },
     {
@@ -105,7 +96,7 @@
       "location" : "https://github.com/vmanot/Swallow.git",
       "state" : {
         "branch" : "master",
-        "revision" : "d3ee02dc2f0aada8e7fc86faa40d336f71f07d6a"
+        "revision" : "849ae3dea81f3897dc35689a08d02511a607b6a7"
       }
     },
     {
@@ -177,7 +168,7 @@
       "location" : "https://github.com/SwiftUIX/SwiftUIZ.git",
       "state" : {
         "branch" : "main",
-        "revision" : "bde754d5e898c7225fb9a865fd2f30e7f75e4e81"
+        "revision" : "d9b85702906de4cc1e4b065125003499f563e06e"
       }
     },
     {

@@ -10,16 +10,16 @@ import SwiftUIZ
 @MainActor
 final class SearchViewModel: ObservableObject {
     var cancellables: [AnyCancellable] = []
-    let safariHistoryManager = SafariHistoryManager(historyURL: URL.downloadsDirectory.appending("Safari-History/History.db"))
+    let safariHistoryManager = SafariHistoryManager()
     
-    @Published var searchHistory: [SafariHistoryRecord] = []
+    @Published var searchHistory: IdentifierIndexingArrayOf<SafariHistoryRecord> = []
     
     struct Key: Codable, Hashable {
-        let record: SafariHistoryRecord
+        let record: SafariHistoryRecord.ID
     }
     
-    @UserDefault.Published("vectorIndex)") var index = NaiveVectorIndex<Key>()
-
+    @UserDefault.Published("vectorIndex") var index = NaiveVectorIndex<Key>()
+    
     @Published var searchText: String = "" {
         didSet {
             if searchText.isEmpty {
@@ -27,7 +27,7 @@ final class SearchViewModel: ObservableObject {
             }
         }
     }
-    @Published var searchResults: [SafariHistoryRecord] = []
+    @Published var searchResults: IdentifierIndexingArrayOf<SafariHistoryRecord> = []
     
     init() {
         $searchText.debounce(
@@ -46,6 +46,7 @@ final class SearchViewModel: ObservableObject {
         .store(in: &cancellables)
     }
     
+    @MainActor
     func search() async throws {
         let searchEmbedding = try await Lite.shared.textEmbedding(
             for: searchText,
@@ -54,17 +55,22 @@ final class SearchViewModel: ObservableObject {
         
         let searchVector: [Double] = searchEmbedding.rawValue
         
-        let results = try index.query(.topMatches(for: searchVector, maximumNumberOfResults: 20))
+        let results = try index.query(
+            .topMatches(for: searchVector, maximumNumberOfResults: 20)
+        )
         
-        let records: [SafariHistoryRecord] = results.map({ $0.item.record })
+        let records: [SafariHistoryRecord] = try results
+            .map({ $0.item.record })
+            .map({ try self.searchHistory[id: $0].unwrap() })
         
-        self.searchHistory = records
+        self.searchHistory = IdentifierIndexingArray(records)
     }
     
+    @MainActor
     func load() async throws {
         let searchHistory = try await safariHistoryManager.fetchHistory()
         
-        self.searchHistory = Array(searchHistory.prefix(500).distinct())
+        self.searchHistory = IdentifierIndexingArray(searchHistory.distinct(by: \.id))
         
         if index.isEmpty {
             print("Beginning embedding")
@@ -79,14 +85,14 @@ final class SearchViewModel: ObservableObject {
     
     func embed() async throws {
         let textsByKeys: [(Key, String)] = searchHistory.map { (record: SafariHistoryRecord) -> (Key, String) in
-            let key = Key(record: record)
+            let key = Key(record: record.id)
             let text = "A Safari history item with the title: \(record.title ?? "Untitled"), url: \(record.url)"
             
             return (key, text)
         }
         
         let lite = Lite.shared
-    
+        
         let texts: [String] = textsByKeys.map(\.1)
         
         let embeddings: TextEmbeddings = try await lite.textEmbeddings(
@@ -104,20 +110,23 @@ struct SearchView: View {
     @StateObject var searchViewModel = SearchViewModel()
     
     @State var isEmbedding: Bool = false
-        
+    
     var body: some View {
-        XStack {
+        XStack(alignment: .top) {
             VStack {
                 SearchBar(text: $searchViewModel.searchText)
+                    .controlSize(.large)
                 
                 if isEmbedding {
                     ActivityIndicator()
+                        .padding(.extraLarge)
                 } else {
                     contentView
                 }
             }
+            .padding()
         }
-        .task {
+        .task(priority: .high) {
             do {
                 isEmbedding = true
                 
@@ -133,8 +142,8 @@ struct SearchView: View {
     var contentView: some View {
         List {
             let data = !searchViewModel.searchResults.isEmpty ? searchViewModel.searchResults : searchViewModel.searchHistory
-
-            ForEach(data, id: \.hashValue) { record in
+            
+            ForEach(data) { record in
                 Cell(record: record)
             }
         }

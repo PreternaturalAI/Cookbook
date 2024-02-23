@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		460ECED02B77D4A7004B98AD /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460ECECF2B77D4A7004B98AD /* SearchView.swift */; };
-		4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 4697E9132B59F51E00A1A3D3 /* Lite */; };
+		4698DB412B7A79C400FA6A69 /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 4698DB402B7A79C400FA6A69 /* Lite */; };
 		D495956A2AB2D0DE00FF8274 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49595692AB2D0DE00FF8274 /* App.swift */; };
 		D495956C2AB2D0DE00FF8274 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495956B2AB2D0DE00FF8274 /* ContentView.swift */; };
 		D495956E2AB2D0DF00FF8274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D495956D2AB2D0DF00FF8274 /* Assets.xcassets */; };
@@ -28,18 +28,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */,
+				4698DB412B7A79C400FA6A69 /* Lite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4698DB3D2B7A79BC00FA6A69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D495955D2AB2D0DE00FF8274 = {
 			isa = PBXGroup;
 			children = (
 				D49595682AB2D0DE00FF8274 /* SafariSearch */,
 				D49595672AB2D0DE00FF8274 /* Products */,
+				4698DB3D2B7A79BC00FA6A69 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,7 +88,7 @@
 			);
 			name = SafariSearch;
 			packageProductDependencies = (
-				4697E9132B59F51E00A1A3D3 /* Lite */,
+				4698DB402B7A79C400FA6A69 /* Lite */,
 			);
 			productName = EmbeddingsPlayground;
 			productReference = D49595662AB2D0DE00FF8274 /* SafariSearch.app */;
@@ -374,7 +382,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4697E9132B59F51E00A1A3D3 /* Lite */ = {
+		4698DB402B7A79C400FA6A69 /* Lite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4697E9122B59F51E00A1A3D3 /* XCRemoteSwiftPackageReference "Lite" */;
 			productName = Lite;

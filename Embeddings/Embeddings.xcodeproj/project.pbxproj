@@ -7,13 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 4697E9132B59F51E00A1A3D3 /* Lite */; };
+		460F62F32B7A7B2D00734425 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460F62F22B7A7B2D00734425 /* AppModel.swift */; };
+		4698DB442B7A79CA00FA6A69 /* Lite in Frameworks */ = {isa = PBXBuildFile; productRef = 4698DB432B7A79CA00FA6A69 /* Lite */; };
+		4698DB462B7A7A0100FA6A69 /* TextEmbeddingsPlaygroundScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4698DB452B7A7A0100FA6A69 /* TextEmbeddingsPlaygroundScene.swift */; };
 		D495956A2AB2D0DE00FF8274 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49595692AB2D0DE00FF8274 /* App.swift */; };
 		D495956C2AB2D0DE00FF8274 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D495956B2AB2D0DE00FF8274 /* ContentView.swift */; };
 		D495956E2AB2D0DF00FF8274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D495956D2AB2D0DF00FF8274 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		460F62F22B7A7B2D00734425 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		4698DB452B7A7A0100FA6A69 /* TextEmbeddingsPlaygroundScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEmbeddingsPlaygroundScene.swift; sourceTree = "<group>"; };
 		D49595662AB2D0DE00FF8274 /* Embeddings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Embeddings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D49595692AB2D0DE00FF8274 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
 		D495956B2AB2D0DE00FF8274 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -26,13 +30,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4697E9142B59F51E00A1A3D3 /* Lite in Frameworks */,
+				4698DB442B7A79CA00FA6A69 /* Lite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		46C54AB22B8854D700B6933B /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				4698DB452B7A7A0100FA6A69 /* TextEmbeddingsPlaygroundScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
 		D495955D2AB2D0DE00FF8274 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +64,9 @@
 		D49595682AB2D0DE00FF8274 /* Embeddings */ = {
 			isa = PBXGroup;
 			children = (
+				46C54AB22B8854D700B6933B /* Scenes */,
 				D49595692AB2D0DE00FF8274 /* App.swift */,
+				460F62F22B7A7B2D00734425 /* AppModel.swift */,
 				D495956B2AB2D0DE00FF8274 /* ContentView.swift */,
 				D495956D2AB2D0DF00FF8274 /* Assets.xcassets */,
 				D495956F2AB2D0DF00FF8274 /* Embeddings.entitlements */,
@@ -77,7 +91,7 @@
 			);
 			name = Embeddings;
 			packageProductDependencies = (
-				4697E9132B59F51E00A1A3D3 /* Lite */,
+				4698DB432B7A79CA00FA6A69 /* Lite */,
 			);
 			productName = EmbeddingsPlayground;
 			productReference = D49595662AB2D0DE00FF8274 /* Embeddings.app */;
@@ -136,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D495956C2AB2D0DE00FF8274 /* ContentView.swift in Sources */,
+				4698DB462B7A7A0100FA6A69 /* TextEmbeddingsPlaygroundScene.swift in Sources */,
 				D495956A2AB2D0DE00FF8274 /* App.swift in Sources */,
+				460F62F32B7A7B2D00734425 /* AppModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,7 +386,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		4697E9132B59F51E00A1A3D3 /* Lite */ = {
+		4698DB432B7A79CA00FA6A69 /* Lite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4697E9122B59F51E00A1A3D3 /* XCRemoteSwiftPackageReference "Lite" */;
 			productName = Lite;
