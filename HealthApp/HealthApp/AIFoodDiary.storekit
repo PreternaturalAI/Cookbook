@@ -1,0 +1,129 @@
+{
+  "identifier" : "A4C5C4F6",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6479388434",
+    "_developerTeamID" : "557H2MLN2D",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 732089627.07931697,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "21464094",
+      "localizations" : [
+
+      ],
+      "name" : "Food Diary - Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "9.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "6479388408",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "It's like an all can you buffet in here.",
+              "displayName" : "Pro - Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pro_monthly_1",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Food Diary Pro - Monthly",
+          "subscriptionGroupID" : "21464094",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "99.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6479388501",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "It's like an all you can eat buffet. Yearly!",
+              "displayName" : "Pro - Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "pro_yearly_1",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Food Diary Pro - Yearly",
+          "subscriptionGroupID" : "21464094",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}
