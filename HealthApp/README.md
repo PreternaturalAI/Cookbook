@@ -10,7 +10,7 @@ A simple app to upload an image to OpenAI Vision for analysis. If the item is fo
 |  | Main Features |
 | :-------- | :-----------|
 | 📖 | Open Source |
-|📸|Take a photp|
+|📸|Take a photo|
 |📈|Upload & Analyze|
 |💸|Subscription handling*|
 
