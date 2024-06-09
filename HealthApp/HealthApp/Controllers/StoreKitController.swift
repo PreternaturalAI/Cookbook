@@ -53,24 +53,24 @@ class StoreManager: NSObject, ObservableObject {
         let result = try await product.purchase()
         
         switch result {
-        case let .success(.verified(transaction)):
-            // Successful purchase
-            await transaction.finish()
-            await self.updatePurchasedProducts()
-        case let .success(.unverified(_, error)):
-            print(error)
-            // Successful purchase but transaction/receipt can't be verified
-            // Could be a jailbroken phone
-            break
-        case .pending:
-            // Transaction waiting on SCA (Strong Customer Authentication) or
-            // approval from Ask to Buy
-            break
-        case .userCancelled:
-            // ^^^
-            break
-        @unknown default:
-            break
+            case let .success(.verified(transaction)):
+                // Successful purchase
+                await transaction.finish()
+                await self.updatePurchasedProducts()
+            case let .success(.unverified(_, error)):
+                print(error)
+                // Successful purchase but transaction/receipt can't be verified
+                // Could be a jailbroken phone
+                break
+            case .pending:
+                // Transaction waiting on SCA (Strong Customer Authentication) or
+                // approval from Ask to Buy
+                break
+            case .userCancelled:
+                // ^^^
+                break
+            @unknown default:
+                break
         }
     }
     

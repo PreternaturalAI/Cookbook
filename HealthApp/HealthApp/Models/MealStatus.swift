@@ -17,16 +17,16 @@ enum MealStatus: Equatable {
     
     var description: String {
         switch self {
-        case .uploading:
-            return "Uploading Image"
-        case .analyzing:
-            return "Analyzing Image"
-        case .cancelled:
-            return "Cancelled"
-        case .failure:
-            return "Item was not able to be identified."
-        case .complete:
-            return "Saved!"
+            case .uploading:
+                return "Uploading Image"
+            case .analyzing:
+                return "Analyzing Image"
+            case .cancelled:
+                return "Cancelled"
+            case .failure:
+                return "Item was not able to be identified."
+            case .complete:
+                return "Saved!"
         }
     }
 }

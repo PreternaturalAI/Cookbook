@@ -27,7 +27,7 @@ extension Day {
         shortSummary = dayEntity.shortSummary ?? ""
         longSummary = dayEntity.longSummary ?? ""
         totalSummary = dayEntity.totalSummary ?? ""
-        meals = (dayEntity.meals as? Array<MealEntity>)?.map(Meal.init) ?? []
+        meals = (dayEntity.meals as? Set<MealEntity>)?.map(Meal.init) ?? []
     }
 }
 

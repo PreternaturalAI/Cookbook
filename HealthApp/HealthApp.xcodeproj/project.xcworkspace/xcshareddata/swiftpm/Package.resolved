@@ -1,4 +1,5 @@
 {
+  "originHash" : "d41375f07df41331b92ab28f370172c9eae7316779ef729c45c1c7db82427fea",
   "pins" : [
     {
       "identity" : "ai",
@@ -6,7 +7,7 @@
       "location" : "https://github.com/PreternaturalAI/AI.git",
       "state" : {
         "branch" : "main",
-        "revision" : "dd01a05ce729e1f1a03069fc55b34e3f3210c5a8"
+        "revision" : "62b397e0ff2858931be292b3c6ba2e3757ea6e50"
       }
     },
     {
@@ -15,16 +16,7 @@
       "location" : "https://github.com/vmanot/BrowserKit.git",
       "state" : {
         "branch" : "main",
-        "revision" : "047d41ec0af563716100c226aa7d40a9b8f9343a"
-      }
-    },
-    {
-      "identity" : "cataphyl",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PreternaturalAI/Cataphyl.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "c3ee448333aef2aec2449f1744c7c2d65f2c0bb8"
+        "revision" : "40d8f99d9283ff9dc154c0a33e27b9148575aca3"
       }
     },
     {
@@ -33,7 +25,7 @@
       "location" : "https://github.com/PreternaturalAI/ChatKit.git",
       "state" : {
         "branch" : "main",
-        "revision" : "92ccf552c4c0ec56fd040c1054d18f91018fbf20"
+        "revision" : "1783eef77a3252199e45d77745e37248675f74ff"
       }
     },
     {
@@ -42,25 +34,7 @@
       "location" : "https://github.com/vmanot/CorePersistence.git",
       "state" : {
         "branch" : "main",
-        "revision" : "129fb047e61543e55591c9841a00255c12c66445"
-      }
-    },
-    {
-      "identity" : "lite",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/PreternaturalAI/Lite",
-      "state" : {
-        "branch" : "main",
-        "revision" : "718424d092b499c535963a0b818fa74483bd8d1e"
-      }
-    },
-    {
-      "identity" : "media",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/vmanot/Media.git",
-      "state" : {
-        "branch" : "main",
-        "revision" : "367973317679ef1d92df07a4dce3048976a1a7e0"
+        "revision" : "b112a526b11ce9460cb92dd11f7cdc135463a22f"
       }
     },
     {
@@ -69,7 +43,7 @@
       "location" : "https://github.com/vmanot/Merge.git",
       "state" : {
         "branch" : "master",
-        "revision" : "387dba794eea18683f4a9a4362f3c8b6f64dc521"
+        "revision" : "5e96cca249b82696294c4095f58ebc85cbffd462"
       }
     },
     {
@@ -78,7 +52,16 @@
       "location" : "https://github.com/vmanot/NetworkKit.git",
       "state" : {
         "branch" : "master",
-        "revision" : "883e0770e3b566442c0123d099d9cfb87f77c4ba"
+        "revision" : "5b2852b8564a8c96423be69785b9d0c035e5bafa"
+      }
+    },
+    {
+      "identity" : "sideproject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PreternaturalAI/Sideproject.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "3ca086f2d318515424c0ae11f6d2e11a3939559e"
       }
     },
     {
@@ -87,7 +70,7 @@
       "location" : "https://github.com/vmanot/Swallow.git",
       "state" : {
         "branch" : "master",
-        "revision" : "e183b1c7ee5fc7ef142a45c6fcee8775aa0419a8"
+        "revision" : "c853fff705897ef8348f0ef830eafa3822f57c9f"
       }
     },
     {
@@ -95,8 +78,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-collections",
       "state" : {
-        "revision" : "94cf62b3ba8d4bed62680a282d4c25f9c63c2efb",
-        "version" : "1.1.0"
+        "revision" : "ee97538f5b81ae89698fd95938896dec5217b148",
+        "version" : "1.1.1"
       }
     },
     {
@@ -104,8 +87,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-syntax.git",
       "state" : {
-        "revision" : "fa8f95c2d536d6620cc2f504ebe8a6167c9fc2dd",
-        "version" : "510.0.1"
+        "revision" : "303e5c5c36d6a558407d364878df131c3546fad8",
+        "version" : "510.0.2"
       }
     },
     {
@@ -114,16 +97,7 @@
       "location" : "https://github.com/vmanot/SwiftAPI.git",
       "state" : {
         "branch" : "master",
-        "revision" : "195ce0c8e6c177ba9cfded33c2c0ced21d8d5949"
-      }
-    },
-    {
-      "identity" : "swiftdb",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/vmanot/SwiftDB.git",
-      "state" : {
-        "branch" : "master",
-        "revision" : "7f46d1864617d5e3327f2a121fe46be04c8e19aa"
+        "revision" : "cd462700c5a7af837ebd52a5fc31af9164816048"
       }
     },
     {
@@ -150,7 +124,7 @@
       "location" : "https://github.com/SwiftUIX/SwiftUIX.git",
       "state" : {
         "branch" : "master",
-        "revision" : "7e64bd189aa07b6d418f27f9605a6103a17ae1f2"
+        "revision" : "e4591dccb19f689f8b44352bd59c7226d1054440"
       }
     },
     {
@@ -159,18 +133,9 @@
       "location" : "https://github.com/SwiftUIX/SwiftUIZ.git",
       "state" : {
         "branch" : "main",
-        "revision" : "3a70e2b1106e88407d260447cd9f31de833862a2"
-      }
-    },
-    {
-      "identity" : "usearch",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/unum-cloud/usearch",
-      "state" : {
-        "branch" : "main",
-        "revision" : "f79d8180122c717203b74f7a7473964c413cb5c1"
+        "revision" : "599d5ec89efa7810a23dba32f6e402cd38b9e3e0"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }

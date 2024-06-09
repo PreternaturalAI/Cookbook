@@ -7,9 +7,9 @@
 
 import Foundation
 import SwiftUI
-import Lite
+import Sideproject
 
-// MARK: - Meal Controller
+@MainActor
 class MealController: ObservableObject {
     
     // Published properties to observe changes in the meal's status and the current image.
@@ -17,12 +17,12 @@ class MealController: ObservableObject {
     @Published var currentImage: UIImage? = nil
     
     // OpenAI client for sending requests.
-    let openAIClient = OpenAI.APIClient.init(apiKey: "your-api-key") // Hide or replace your API key in real code for security
-//    #error("Please enter your OpenAI API Key")
+    let openAIClient = OpenAI.Client.init(apiKey: "your-api-key") // Hide or replace your API key in real code for security
+    //    #error("Please enter your OpenAI API Key")
     
     // Initializes the MealController and registers the OpenAI client.
     init() {
-        Lite.shared.add(openAIClient)
+        Sideproject.shared.add(openAIClient)
     }
     
     // Asynchronously creates a meal object from an image.
@@ -81,7 +81,7 @@ class MealController: ObservableObject {
         ]
         
         // Request and process the response from the OpenAI service.
-        let completion = try await Lite.shared.complete(
+        let completion = try await Sideproject.shared.complete(
             prompt: .chat(
                 .init(messages: messages)
             ),
@@ -107,7 +107,7 @@ class MealController: ObservableObject {
         ]
         
         // Request and process the response from the OpenAI service.
-        let completion = try await Lite.shared.complete(
+        let completion = try await Sideproject.shared.complete(
             prompt: .chat(
                 .init(messages: messages)
             ),
