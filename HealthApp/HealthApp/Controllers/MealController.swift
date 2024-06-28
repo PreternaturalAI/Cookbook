@@ -16,15 +16,6 @@ class MealController: ObservableObject {
     @Published var mealStatus: MealStatus? = nil
     @Published var currentImage: UIImage? = nil
     
-    // OpenAI client for sending requests.
-    let openAIClient = OpenAI.Client.init(apiKey: "your-api-key") // Hide or replace your API key in real code for security
-    //    #error("Please enter your OpenAI API Key")
-    
-    // Initializes the MealController and registers the OpenAI client.
-    init() {
-        Sideproject.shared.add(openAIClient)
-    }
-    
     // Asynchronously creates a meal object from an image.
     @MainActor
     func createMeal(image: UIImage) async throws -> Meal? {
@@ -39,6 +30,7 @@ class MealController: ObservableObject {
         let isFood = try await getIfMeal(image: image)
         guard isFood else {
             self.mealStatus = .failure // Set status to failure if not a meal
+            Router.shared.showAlert(.failedToIdentifyFood)
             return nil
         }
         

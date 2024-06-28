@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import StoreKit
 
+// TODO: This should be extracted as part of a `SubscriptionsUI` package
+
 struct SubscriptionOptionView: View {
     var product: Product
     var isYearly: Bool
@@ -36,7 +38,7 @@ struct SubscriptionOptionView: View {
                     .foregroundColor(.white)
                     .padding(.trailing, 10)
             }
-            .background(Color.blue) // Changed to vary background based on isYearly
+            .background(Color.blue)
             .cornerRadius(15)
         }
     }

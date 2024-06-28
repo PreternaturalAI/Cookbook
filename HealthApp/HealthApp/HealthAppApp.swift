@@ -24,7 +24,7 @@ struct HealthAppApp: App {
     
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ContentView()
                 .environmentObject(entitlementManager)
                 .environmentObject(storeManager)
                 .task {

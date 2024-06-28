@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 import StoreKit
 
+// TODO: This should be extracted as part of a `SubscriptionsUI` package
+
 struct StoreKitView: View {
     @EnvironmentObject private var entitlementManager: EntitlementManager
     @EnvironmentObject private var storeManager: StoreManager

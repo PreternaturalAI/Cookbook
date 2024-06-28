@@ -53,5 +53,4 @@ class CoreDataController: ObservableObject {
         day.save(context: context)
         self.loadData()
     }
-    
 }

@@ -10,9 +10,6 @@ import AVFoundation
 import SwiftUI
 import UIKit
 
-import SwiftUI
-import AVFoundation // Ensure this is imported to use AVCaptureDevice
-
 // MARK: - SwiftUI Camera View
 struct CameraView: View {
     @State private var image: UIImage?
@@ -30,7 +27,7 @@ struct CameraView: View {
             actionButton
         }
         .background(Color.black.ignoresSafeArea())
-        .onChange(of: showing) { newValue in
+        .onChange(of: showing) { _, newValue in
             if !newValue { image = nil }
         }
     }

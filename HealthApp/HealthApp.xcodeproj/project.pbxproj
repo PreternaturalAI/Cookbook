@@ -7,12 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2687D7332C2E250600A573A1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7322C2E250600A573A1 /* ContentView.swift */; };
+		2687D7392C2E299F00A573A1 /* Health.ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7382C2E299F00A573A1 /* Health.ButtonStyle.swift */; };
+		2687D73B2C2E2C8600A573A1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D73A2C2E2C8600A573A1 /* Router.swift */; };
+		2687D73D2C2E2DEB00A573A1 /* LocalizedAlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D73C2C2E2DEB00A573A1 /* LocalizedAlertError.swift */; };
+		2687D7402C2E317D00A573A1 /* CameraInteractionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D73F2C2E317D00A573A1 /* CameraInteractionView.swift */; };
+		2687D7422C2E320C00A573A1 /* Home.Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7412C2E320C00A573A1 /* Home.Content.swift */; };
+		2687D7442C2E322200A573A1 /* Home.StatusGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7432C2E322200A573A1 /* Home.StatusGroupView.swift */; };
+		2687D7462C2E324C00A573A1 /* Home.MealStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7452C2E324C00A573A1 /* Home.MealStatusView.swift */; };
+		2687D7482C2E329800A573A1 /* Home.MealsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7472C2E329800A573A1 /* Home.MealsList.swift */; };
+		2687D74A2C2E32BA00A573A1 /* Home.CameraOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2687D7492C2E32BA00A573A1 /* Home.CameraOverlayView.swift */; };
 		26A373DB2BA0020B00EEAB3C /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373DA2BA0020B00EEAB3C /* Meal.swift */; };
 		26A373DD2BA00D6B00EEAB3C /* MealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373DC2BA00D6B00EEAB3C /* MealCell.swift */; };
 		26A373DF2BA00D8A00EEAB3C /* SuggestedMealsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373DE2BA00D8A00EEAB3C /* SuggestedMealsCell.swift */; };
 		26A373E12BA0147800EEAB3C /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373E02BA0147800EEAB3C /* Day.swift */; };
 		26A373E32BA0211C00EEAB3C /* MealController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373E22BA0211C00EEAB3C /* MealController.swift */; };
-		26A373E52BA0212600EEAB3C /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373E42BA0212600EEAB3C /* NavigationButton.swift */; };
 		26A373E72BA0213000EEAB3C /* DailySummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373E62BA0213000EEAB3C /* DailySummaryView.swift */; };
 		26A373E92BA0213C00EEAB3C /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A373E82BA0213C00EEAB3C /* DayView.swift */; };
 		26D4B3BD2BA03A63008E43DB /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D4B3BC2BA03A63008E43DB /* CameraView.swift */; };
@@ -35,12 +44,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2687D7322C2E250600A573A1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2687D7382C2E299F00A573A1 /* Health.ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Health.ButtonStyle.swift; sourceTree = "<group>"; };
+		2687D73A2C2E2C8600A573A1 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		2687D73C2C2E2DEB00A573A1 /* LocalizedAlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizedAlertError.swift; sourceTree = "<group>"; };
+		2687D73F2C2E317D00A573A1 /* CameraInteractionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraInteractionView.swift; sourceTree = "<group>"; };
+		2687D7412C2E320C00A573A1 /* Home.Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.Content.swift; sourceTree = "<group>"; };
+		2687D7432C2E322200A573A1 /* Home.StatusGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.StatusGroupView.swift; sourceTree = "<group>"; };
+		2687D7452C2E324C00A573A1 /* Home.MealStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.MealStatusView.swift; sourceTree = "<group>"; };
+		2687D7472C2E329800A573A1 /* Home.MealsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.MealsList.swift; sourceTree = "<group>"; };
+		2687D7492C2E32BA00A573A1 /* Home.CameraOverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.CameraOverlayView.swift; sourceTree = "<group>"; };
 		26A373DA2BA0020B00EEAB3C /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		26A373DC2BA00D6B00EEAB3C /* MealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCell.swift; sourceTree = "<group>"; };
 		26A373DE2BA00D8A00EEAB3C /* SuggestedMealsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuggestedMealsCell.swift; sourceTree = "<group>"; };
 		26A373E02BA0147800EEAB3C /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		26A373E22BA0211C00EEAB3C /* MealController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealController.swift; sourceTree = "<group>"; };
-		26A373E42BA0212600EEAB3C /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 		26A373E62BA0213000EEAB3C /* DailySummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailySummaryView.swift; sourceTree = "<group>"; };
 		26A373E82BA0213C00EEAB3C /* DayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		26D4B3BC2BA03A63008E43DB /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
@@ -75,9 +93,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2687D7372C2E298200A573A1 /* Intramodular */ = {
+			isa = PBXGroup;
+			children = (
+				2687D7382C2E299F00A573A1 /* Health.ButtonStyle.swift */,
+				2687D73C2C2E2DEB00A573A1 /* LocalizedAlertError.swift */,
+			);
+			path = Intramodular;
+			sourceTree = "<group>";
+		};
+		2687D73E2C2E30CB00A573A1 /* Intramodular (WIP) */ = {
+			isa = PBXGroup;
+			children = (
+				26D4B3FF2BA2B101008E43DB /* StoreKitView.swift */,
+				26D4B40F2BA3D05C008E43DB /* SubscriptionOptionView.swift */,
+			);
+			path = "Intramodular (WIP)";
+			sourceTree = "<group>";
+		};
 		26A373EA2BA0217C00EEAB3C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				2687D73A2C2E2C8600A573A1 /* Router.swift */,
 				26A373E22BA0211C00EEAB3C /* MealController.swift */,
 				26D4B3FA2BA16B35008E43DB /* CoreDataController.swift */,
 				26D4B4012BA2B127008E43DB /* StoreKitController.swift */,
@@ -88,6 +125,9 @@
 		26A373ED2BA0219000EEAB3C /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				2687D73E2C2E30CB00A573A1 /* Intramodular (WIP) */,
+				2687D7372C2E298200A573A1 /* Intramodular */,
+				2687D7322C2E250600A573A1 /* ContentView.swift */,
 				26D4B3FE2BA2B0F2008E43DB /* StoreKit */,
 				26A373F32BA0222400EEAB3C /* Home */,
 				26A373F42BA0225100EEAB3C /* Day */,
@@ -120,7 +160,6 @@
 		26A373F22BA021E400EEAB3C /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				26A373E42BA0212600EEAB3C /* NavigationButton.swift */,
 				26D4B3BC2BA03A63008E43DB /* CameraView.swift */,
 				26D4B3F52BA1636F008E43DB /* Date+Extensions.swift */,
 			);
@@ -131,6 +170,12 @@
 			isa = PBXGroup;
 			children = (
 				26DC67BC2B9D8111009DA1D8 /* HomeView.swift */,
+				2687D7412C2E320C00A573A1 /* Home.Content.swift */,
+				2687D7432C2E322200A573A1 /* Home.StatusGroupView.swift */,
+				2687D7452C2E324C00A573A1 /* Home.MealStatusView.swift */,
+				2687D7472C2E329800A573A1 /* Home.MealsList.swift */,
+				2687D7492C2E32BA00A573A1 /* Home.CameraOverlayView.swift */,
+				2687D73F2C2E317D00A573A1 /* CameraInteractionView.swift */,
 				26DC67E52B9D850C009DA1D8 /* DailyCell.swift */,
 			);
 			path = Home;
@@ -149,9 +194,7 @@
 		26D4B3FE2BA2B0F2008E43DB /* StoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				26D4B3FF2BA2B101008E43DB /* StoreKitView.swift */,
 				26D4B40D2BA3D038008E43DB /* FeatureView.swift */,
-				26D4B40F2BA3D05C008E43DB /* SubscriptionOptionView.swift */,
 			);
 			path = StoreKit;
 			sourceTree = "<group>";
@@ -264,21 +307,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A373DB2BA0020B00EEAB3C /* Meal.swift in Sources */,
+				2687D7392C2E299F00A573A1 /* Health.ButtonStyle.swift in Sources */,
 				26D4B40C2BA3D010008E43DB /* Prompts.swift in Sources */,
 				26D4B4102BA3D05C008E43DB /* SubscriptionOptionView.swift in Sources */,
 				26A373E92BA0213C00EEAB3C /* DayView.swift in Sources */,
 				26D4B4022BA2B127008E43DB /* StoreKitController.swift in Sources */,
+				2687D7482C2E329800A573A1 /* Home.MealsList.swift in Sources */,
+				2687D73D2C2E2DEB00A573A1 /* LocalizedAlertError.swift in Sources */,
+				2687D7462C2E324C00A573A1 /* Home.MealStatusView.swift in Sources */,
 				26D4B3BD2BA03A63008E43DB /* CameraView.swift in Sources */,
 				26A373DD2BA00D6B00EEAB3C /* MealCell.swift in Sources */,
 				26DC67BD2B9D8111009DA1D8 /* HomeView.swift in Sources */,
-				26A373E52BA0212600EEAB3C /* NavigationButton.swift in Sources */,
 				26DC67E62B9D850C009DA1D8 /* DailyCell.swift in Sources */,
 				26D4B3F92BA16ADF008E43DB /* Data.xcdatamodeld in Sources */,
 				26A373E32BA0211C00EEAB3C /* MealController.swift in Sources */,
+				2687D7442C2E322200A573A1 /* Home.StatusGroupView.swift in Sources */,
+				2687D7332C2E250600A573A1 /* ContentView.swift in Sources */,
+				2687D7422C2E320C00A573A1 /* Home.Content.swift in Sources */,
 				26D4B4002BA2B101008E43DB /* StoreKitView.swift in Sources */,
 				26A373E72BA0213000EEAB3C /* DailySummaryView.swift in Sources */,
+				2687D74A2C2E32BA00A573A1 /* Home.CameraOverlayView.swift in Sources */,
 				26D4B40E2BA3D038008E43DB /* FeatureView.swift in Sources */,
+				2687D73B2C2E2C8600A573A1 /* Router.swift in Sources */,
 				26D4B3FB2BA16B35008E43DB /* CoreDataController.swift in Sources */,
+				2687D7402C2E317D00A573A1 /* CameraInteractionView.swift in Sources */,
 				26D4B3F62BA1636F008E43DB /* Date+Extensions.swift in Sources */,
 				26A373DF2BA00D8A00EEAB3C /* SuggestedMealsCell.swift in Sources */,
 				26D4B40A2BA3CFFA008E43DB /* MealStatus.swift in Sources */,
@@ -418,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 4PWQ7VFGWM;
+				DEVELOPMENT_TEAM = 557H2MLN2D;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -461,7 +513,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 4PWQ7VFGWM;
+				DEVELOPMENT_TEAM = 557H2MLN2D;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
