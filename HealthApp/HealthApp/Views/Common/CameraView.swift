@@ -208,7 +208,12 @@ class CustomCameraViewController: AppKitOrUIKitViewController, AVCapturePhotoCap
         videoPreviewLayer.connection?.videoOrientation = .portrait
 
         DispatchQueue.main.async { [weak self] in
+            #if os(macOS)
             self?.view.layer?.addSublayer(self!.videoPreviewLayer)
+            #endif
+            #if os(iOS)
+            self?.view.layer.addSublayer(self!.videoPreviewLayer)
+            #endif
             self?.videoPreviewLayer.frame = self!.view.bounds
         }
 
@@ -222,7 +227,8 @@ class CustomCameraViewController: AppKitOrUIKitViewController, AVCapturePhotoCap
             }
         }
     }
-
+    
+    #if os(macOS)
     override func viewDidLayout() {
         super.viewDidLayout()
         if videoPreviewLayer != nil {
@@ -230,6 +236,16 @@ class CustomCameraViewController: AppKitOrUIKitViewController, AVCapturePhotoCap
             videoPreviewLayer.frame = view.bounds
         }
     }
+    #endif
+    #if os(iOS)
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        if videoPreviewLayer != nil {
+            videoPreviewLayer.videoGravity = .resizeAspectFill
+            videoPreviewLayer.frame = view.bounds
+        }
+    }
+    #endif
 
 
     func switchCamera(to position: AVCaptureDevice.Position) {

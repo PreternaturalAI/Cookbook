@@ -16,11 +16,13 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: self.$currentTab) {
             HomeView().tabItem {
+                Image(systemName: currentTab == 0 ? .house : .houseFill)
                 Text(
                     "Home"
                 )
             }.tag(1)
             SideprojectAccountsView().tabItem {
+                Image(systemName: currentTab == 1 ? .mailStack : .mailStackFill)
                 Text(
                     "Accounts"
                 )

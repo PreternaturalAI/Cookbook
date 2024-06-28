@@ -34,9 +34,10 @@ struct HomeView: View {
             Content(dataController: dataController, coreDataController: coreDataController)
                 .toolbar {
                     subscriptionButton
-                    cameraButton
+//                    cameraButton //TODO: Add PhotoPicker button
                 }
-                .overlay(CameraOverlayView(cameraPresented: $cameraPresented, offset: $offset, coreDataController: coreDataController, dataController: dataController))
+            //FIXME: - Add a way to upload a photo using photoPicker
+//                .overlay(CameraOverlayView(cameraPresented: $cameraPresented, offset: $offset, coreDataController: coreDataController, dataController: dataController))
                 .sheet(isPresented: $subscriptionPresented) {
                     StoreKitView()
                 }
