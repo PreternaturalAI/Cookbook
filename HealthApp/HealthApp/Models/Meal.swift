@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+import SwiftUIX
 import CoreData
 
 struct Meal: Identifiable {
@@ -17,7 +17,7 @@ struct Meal: Identifiable {
     var pros: [String]
     var cons: [String]
     var tags: [String]
-    var image: UIImage
+    var image: _AnyImage
 }
 
 // Extend Meal to initialize from a MealEntity
@@ -30,7 +30,7 @@ extension Meal {
         pros = (mealEntity.pros as? [String]) ?? []
         cons = (mealEntity.cons as? [String]) ?? []
         tags = (mealEntity.tags as? [String]) ?? []
-        image = UIImage(data: mealEntity.image!)!
+        image = _AnyImage(jpegData: mealEntity.image!)!
     }
 }
 
@@ -45,7 +45,7 @@ extension Meal {
         mealEntity.pros = pros as NSArray
         mealEntity.cons = cons as NSArray
         mealEntity.tags = tags as NSArray
-        mealEntity.image = image.jpegData(compressionQuality: 0.8)
+        mealEntity.image = image.jpegData
         // Save context
         do {
             try context.save()

@@ -16,6 +16,7 @@ struct HomeView: View {
     
     var body: some View {
         NavigationView {
+            #if os(iOS)
             Content(dataController: dataController, coreDataController: coreDataController)
                 .navigationBarItems(
                     leading: subscriptionButton,
@@ -28,6 +29,21 @@ struct HomeView: View {
                 .task {
                     coreDataController.loadData()
                 }
+            #endif
+            #if os(macOS)
+            Content(dataController: dataController, coreDataController: coreDataController)
+                .toolbar {
+                    subscriptionButton
+                    cameraButton
+                }
+                .overlay(CameraOverlayView(cameraPresented: $cameraPresented, offset: $offset, coreDataController: coreDataController, dataController: dataController))
+                .sheet(isPresented: $subscriptionPresented) {
+                    StoreKitView()
+                }
+                .task {
+                    coreDataController.loadData()
+                }
+            #endif
         }
     }
     

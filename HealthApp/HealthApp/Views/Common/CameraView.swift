@@ -7,19 +7,18 @@
 
 import Foundation
 import AVFoundation
-import SwiftUI
-import UIKit
+import SwiftUIX
 
 // MARK: - SwiftUI Camera View
 struct CameraView: View {
-    @State private var image: UIImage?
+    @State private var image: _AnyImage?
     @State private var cameraPosition: AVCaptureDevice.Position = .back
     @State private var flashMode: AVCaptureDevice.FlashMode = .off
     @State private var takePhoto: Bool = false
     @Binding var showing: Bool
     @Environment(\.presentationMode) var presentationMode
     
-    var didTakePhoto: (_ photo: UIImage) -> Void
+    var didTakePhoto: (_ photo: _AnyImage) -> Void
 
     var body: some View {
         VStack {
@@ -48,11 +47,16 @@ struct CameraView: View {
     @ViewBuilder
     var cameraOverlay: some View {
         if let image = image {
-            Image(uiImage: image)
+            Image(image: image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
         } else {
-            CustomCameraRepresentable(image: $image, cameraPosition: $cameraPosition, flashMode: $flashMode, takePhoto: $takePhoto)
+            CustomCameraRepresentable(
+                image: $image,
+                cameraPosition: $cameraPosition,
+                flashMode: $flashMode,
+                takePhoto: $takePhoto
+            )
         }
     }
     
@@ -65,7 +69,7 @@ struct CameraView: View {
         }
     }
     
-    func confirmButton(for image: UIImage) -> some View {
+    func confirmButton(for image: _AnyImage) -> some View {
         Button {
             didTakePhoto(image)
         } label: {
@@ -94,26 +98,26 @@ struct CameraView: View {
 
 
 // MARK: - UIKit Wrapper
-struct CustomCameraRepresentable: UIViewControllerRepresentable {
-    @Binding var image: UIImage?
+struct CustomCameraRepresentable: AppKitOrUIKitViewControllerRepresentable {
+    @Binding var image: _AnyImage?
     @Binding var cameraPosition: AVCaptureDevice.Position
     @Binding var flashMode: AVCaptureDevice.FlashMode
     @Binding var takePhoto: Bool
 
-    func makeUIViewController(context: Context) -> CustomCameraViewController {
+    func makeAppKitOrUIKitViewController(context: Context) -> CustomCameraViewController {
         let cameraVC = CustomCameraViewController()
         cameraVC.delegate = context.coordinator
         cameraVC.desiredPosition = cameraPosition
         cameraVC.desiredFlashMode = flashMode
         return cameraVC
     }
-
-    func updateUIViewController(_ uiViewController: CustomCameraViewController, context: Context) {
-        uiViewController.switchCamera(to: cameraPosition)
-        uiViewController.setFlashMode(to: flashMode)
+    
+    func updateAppKitOrUIKitViewController(_ viewController: CustomCameraViewController, context: Context) {
+        viewController.switchCamera(to: cameraPosition)
+        viewController.setFlashMode(to: flashMode)
         
         if takePhoto {
-            uiViewController.capturePhoto()
+            viewController.capturePhoto()
             DispatchQueue.main.async {
                 takePhoto = false // Reset the flag
             }
@@ -131,7 +135,7 @@ struct CustomCameraRepresentable: UIViewControllerRepresentable {
             self.parent = parent
         }
 
-        func didCaptureImage(_ image: UIImage) {
+        func didCaptureImage(_ image: _AnyImage) {
             parent.image = image
         }
     }
@@ -139,10 +143,10 @@ struct CustomCameraRepresentable: UIViewControllerRepresentable {
 
 // MARK: - Custom Camera ViewController
 protocol CustomCameraViewControllerDelegate: AnyObject {
-    func didCaptureImage(_ image: UIImage)
+    func didCaptureImage(_ image: _AnyImage)
 }
 
-class CustomCameraViewController: UIViewController, AVCapturePhotoCaptureDelegate {
+class CustomCameraViewController: AppKitOrUIKitViewController, AVCapturePhotoCaptureDelegate {
     var captureSession: AVCaptureSession!
     var stillImageOutput: AVCapturePhotoOutput!
     var videoPreviewLayer: AVCaptureVideoPreviewLayer!
@@ -204,7 +208,7 @@ class CustomCameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
         videoPreviewLayer.connection?.videoOrientation = .portrait
 
         DispatchQueue.main.async { [weak self] in
-            self?.view.layer.addSublayer(self!.videoPreviewLayer)
+            self?.view.layer?.addSublayer(self!.videoPreviewLayer)
             self?.videoPreviewLayer.frame = self!.view.bounds
         }
 
@@ -219,8 +223,8 @@ class CustomCameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
         }
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
+    override func viewDidLayout() {
+        super.viewDidLayout()
         if videoPreviewLayer != nil {
             videoPreviewLayer.videoGravity = .resizeAspectFill
             videoPreviewLayer.frame = view.bounds
@@ -258,8 +262,8 @@ class CustomCameraViewController: UIViewController, AVCapturePhotoCaptureDelegat
     
     func photoOutput(_ output: AVCapturePhotoOutput, didFinishProcessingPhoto photo: AVCapturePhoto, error: Error?) {
         if let imageData = photo.fileDataRepresentation() {
-            let capturedImage = UIImage(data: imageData)
-            delegate?.didCaptureImage(capturedImage ?? UIImage())
+            let capturedImage = _AnyImage(jpegData: imageData)
+            delegate?.didCaptureImage(capturedImage ?? _AnyImage(.init()))
         }
     }
 

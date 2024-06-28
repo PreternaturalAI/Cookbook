@@ -14,14 +14,14 @@ class MealController: ObservableObject {
     
     // Published properties to observe changes in the meal's status and the current image.
     @Published var mealStatus: MealStatus? = nil
-    @Published var currentImage: UIImage? = nil
+    @Published var currentImage: _AnyImage? = nil
     
     // Asynchronously creates a meal object from an image.
     @MainActor
-    func createMeal(image: UIImage) async throws -> Meal? {
+    func createMeal(image: _AnyImage) async throws -> Meal? {
         // Compress and update the image for processing.
-        guard let data = image.jpegData(compressionQuality: 0.3),
-              let compressedImage = UIImage(data: data) else { return nil }
+        guard let data = image.jpegData,
+              let compressedImage = _AnyImage(jpegData: data) else { return nil }
         
         self.currentImage = compressedImage
         self.mealStatus = .uploading // Update status to uploading
@@ -61,8 +61,8 @@ class MealController: ObservableObject {
     }
     
     // Determines whether an image represents a meal.
-    private func getIfMeal(image: UIImage) async throws -> Bool {
-        let imageLiteral = try PromptLiteral(image: image)
+    private func getIfMeal(image: _AnyImage) async throws -> Bool {
+        let imageLiteral = try PromptLiteral(image: image.appKitOrUIKitImage ?? .init())
         let messages: [AbstractLLM.ChatMessage] = [
             .user {
                 .concatenate(separator: nil) {
@@ -87,8 +87,8 @@ class MealController: ObservableObject {
     }
     
     // Helper function to process a prompt with an image.
-    private func processPrompt(with image: UIImage, prompt: String) async throws -> String {
-        let imageLiteral = try PromptLiteral(image: image)
+    private func processPrompt(with image: _AnyImage, prompt: String) async throws -> String {
+        let imageLiteral = try PromptLiteral(image: image.appKitOrUIKitImage ?? .init())
         let messages: [AbstractLLM.ChatMessage] = [
             .user {
                 .concatenate(separator: nil) {

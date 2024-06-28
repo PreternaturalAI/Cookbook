@@ -26,7 +26,7 @@ struct MealCell: View {
     }
     
     var mealImageView: some View {
-        Image(uiImage: meal.image)
+        Image(image: meal.image)
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(height: 150)

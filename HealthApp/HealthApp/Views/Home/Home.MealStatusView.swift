@@ -6,17 +6,17 @@
 //
 
 import Foundation
-import SwiftUI
+import SwiftUIX
 
 extension HomeView {
     struct MealStatusView: View {
         let status: MealStatus
-        let image: UIImage
+        let image: _AnyImage
         @ObservedObject var dataController: MealController
         
         var body: some View {
             HStack {
-                Image(uiImage: image)
+                Image(image: image)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: 40, height: 40)

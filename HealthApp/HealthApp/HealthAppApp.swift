@@ -23,7 +23,7 @@ struct HealthAppApp: App {
     }
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup(.dynamic) {
             ContentView()
                 .environmentObject(entitlementManager)
                 .environmentObject(storeManager)

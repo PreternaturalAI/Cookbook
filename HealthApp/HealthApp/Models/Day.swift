@@ -49,7 +49,7 @@ extension Day {
             mealEntity.pros = meal.pros as NSArray
             mealEntity.cons = meal.cons as NSArray
             mealEntity.tags = meal.tags as NSArray
-            mealEntity.image = meal.image.jpegData(compressionQuality: 0.8)
+            mealEntity.image = meal.image.jpegData
             return mealEntity
         }
         dayEntity.meals = NSSet(array: mealEntities)

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import SwiftUI
+import SwiftUIX
 
 struct CameraInteractionView: View {
     @Binding var cameraPresented: Bool
@@ -23,14 +23,14 @@ struct CameraInteractionView: View {
         }
     }
     
-    private func processCapturedImage(_ image: UIImage) {
+    private func processCapturedImage(_ image: _AnyImage) {
         cameraPresented = false
         Task {
             await handleMealImage(image)
         }
     }
     
-    private func handleMealImage(_ image: UIImage) async {
+    private func handleMealImage(_ image: _AnyImage) async {
         Task {
             if let _ = self.coreDataController.data.firstIndex(where: {$0.date.isSameDay(as: Date())}) {
                 guard let meal = try await dataController.createMeal(image: image) else {

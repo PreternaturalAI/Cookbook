@@ -41,7 +41,7 @@ struct DailyCell: View {
     }
 
     func mealImageView(meal: Meal) -> some View {
-        Image(uiImage: meal.image)
+        Image(image: meal.image)
             .resizable()
             .frame(width: 50, height: 50) // Removed alignment as it's not necessary with fixed size
             .clipShape(Circle()) // Creates a circular image
